@@ -1,0 +1,25 @@
+.container {
+  overflow: hidden;
+  position: relative;
+}
+.layout {
+  width: 100vw;
+  display: flex;
+
+  transition: transform 0.5s ease;
+}
+
+.left {
+  position: absolute;
+  padding: 10px;
+  background-color: greenyellow;
+  left: 3px;
+  top: 25%;
+}
+.right {
+  position: absolute;
+  padding: 10px;
+  background-color: greenyellow;
+  right: 3px;
+  top: 25%;
+}
