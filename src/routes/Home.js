@@ -69,7 +69,7 @@ function Home() {
         <div>
           <header>
             {" "}
-            <Nav />
+            <Nav className={styled.nav} />
           </header>
           <main>
             <div>

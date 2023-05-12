@@ -4,6 +4,11 @@ import styled from "./Nav.module.css";
 const Nav = () => {
   return (
     <div className={styled.layout}>
+      <div>
+        <Link to={"/"} className={styled.homelink}>
+          Home
+        </Link>
+      </div>
       <ul className={styled.nav}>
         <li>
           <Link to={`/${"action"}`} className={styled.link}>

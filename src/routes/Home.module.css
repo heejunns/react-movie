@@ -1,4 +1,7 @@
 .back {
   height: 1000vh;
-  background-color: white;
+  position: relative;
+}
+.nav {
+  position: fixed;
 }

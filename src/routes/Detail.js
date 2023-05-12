@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import Nav from "../components/Nav";
+import styled from "./Detail.module.css";
 function Detail() {
   const [loading, setLoading] = useState(true);
   const [detailMovie, setDetailMovie] = useState([]);
@@ -21,19 +23,24 @@ function Detail() {
 
   return (
     <div>
-      <h1>
-        {loading ? (
-          "Loading..."
-        ) : (
-          <div>
+      {loading ? (
+        <h1>"Loading..."</h1>
+      ) : (
+        <div>
+          <header>
+            <Nav />
+          </header>
+          <div className={styled.layout}>
             <img src={detailMovie.medium_cover_image} />
-            <h1>{detailMovie.title}</h1>
-            <div>Rating : {detailMovie.rating}</div>
-            <div>Runtime : {detailMovie.runtime}</div>
-            <div>{detailMovie.description_full}</div>
+            <div className={styled.explanation}>
+              <h1>{detailMovie.title_long}</h1>
+              <div>Rating : {detailMovie.rating}</div>
+              <div>Runtime : {detailMovie.runtime}</div>
+              <div>{detailMovie.description_full}</div>
+            </div>
           </div>
-        )}
-      </h1>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,0 +1,10 @@
+.layout {
+  width: 100%;
+  display: flex;
+}
+.explanation {
+  border: 3px solid purple;
+  border-radius: 10px;
+  margin: 3rem;
+  padding: 1rem;
+}
