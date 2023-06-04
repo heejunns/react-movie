@@ -6,7 +6,10 @@ const Nav = () => {
     <div className={styled.layout}>
       <div>
         <Link to={"/"} className={styled.homelink}>
-          Home
+          <span>A</span>
+          <span>c</span>
+          <span>h</span>
+          <span>a</span> <span></span> <span></span>
         </Link>
       </div>
       <ul className={styled.nav}>
@@ -18,7 +21,7 @@ const Nav = () => {
         </li>
         <li>
           <Link to={`/${"animation"}`} className={styled.link}>
-            animation{" "}
+            Animation{" "}
           </Link>
         </li>
         <li>

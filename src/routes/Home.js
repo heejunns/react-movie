@@ -64,37 +64,29 @@ function Home() {
   return (
     <div className={styled.back}>
       {loading ? (
-        <h3>loading... </h3>
+        <div className={styled.loading}>
+          <div className={styled.loadingText}>Loading</div>
+          <div className={styled.loadingIcon1}></div>
+          <div className={styled.loadingIcon2}></div>
+          <div className={styled.loadingIcon3}></div>
+          <div className={styled.loadingIcon4}></div>
+          <div className={styled.loadingIcon5}></div>
+          <div className={styled.loadingIcon6}></div>
+        </div>
       ) : (
-        <div>
+        <>
           <header>
             {" "}
             <Nav className={styled.nav} />
           </header>
-          <main>
-            <div>
-              {" "}
-              <Slide movies={movies} />
-            </div>
-            <div>
-              {" "}
-              <Slide movies={animationMovies} />
-            </div>
-            <div>
-              {" "}
-              <Slide movies={actionMovies} />
-            </div>
-            <div>
-              {" "}
-              <Slide movies={adventureMovies} />
-            </div>
-            <div>
-              {" "}
-              <Slide movies={romanceMovies} />
-            </div>
+          <main className={styled.main}>
+            <Slide movies={movies} />
+            <Slide movies={animationMovies} />
+            <Slide movies={actionMovies} />
+            <Slide movies={adventureMovies} />
+            <Slide movies={romanceMovies} />
           </main>
-          <footer>hello world!</footer>
-        </div>
+        </>
       )}
     </div>
   );

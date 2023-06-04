@@ -1,25 +1,59 @@
-.container {
-  overflow: hidden;
+.back {
   position: relative;
 }
-.layout {
-  width: 100vw;
-  display: flex;
-
-  transition: transform 0.5s ease;
+.container {
+  width: 1000px;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+  left: 340px;
 }
-
+.layout {
+  width: 5000px;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  transition: transform 0.5s ease;
+  background-color: transparent;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+}
+.left,
+.right {
+  border-radius: 50%;
+  background-color: skyblue;
+}
+.left:hover,
+.right:hover {
+  background-color: rgb(28, 103, 179);
+}
 .left {
   position: absolute;
+  top: 35%;
+  left: 15%;
   padding: 10px;
-  background-color: greenyellow;
-  left: 3px;
-  top: 25%;
 }
 .right {
   position: absolute;
+  right: 15%;
+  top: 35%;
   padding: 10px;
-  background-color: greenyellow;
-  right: 3px;
-  top: 25%;
+
+  z-index: 10;
+}
+.slide_smart_button {
+  position: absolute;
+  top: 510px;
+  left: 805px;
+  width: 70px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.slide_smart_button > div {
+  width: 10px;
+  height: 10px;
+  background-color: skyblue;
+  border-radius: 50%;
+}
+.slide_smart_button > div:hover {
+  background-color: rgb(24, 79, 101);
 }

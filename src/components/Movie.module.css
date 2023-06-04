@@ -1,35 +1,57 @@
 .slidebord {
-  width: 30vw;
-  height: 70vh;
+  width: 230px;
+  height: 450px;
   margin: 10px;
-  font-family: "Courgette", cursive;
   box-sizing: border-box;
   padding: 10px;
   border: 3px solid purple;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-radius: 10px;
+  transition: all 1s ease;
+}
+.slidebord:hover {
+  transform: scale(1.2);
+  border-color: greenyellow;
 }
 .movieListBord {
-  height: 80vh;
+  margin: 30px;
+  height: 700px;
   padding: 10px;
-  box-sizing: border-box;
-  width: 30vw;
-  margin: 10px;
-  font-family: "Courgette", cursive;
+  width: 500px;
+  font-family: "Lato", sans-serif;
   border: 3px solid purple;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: space-evenly;
   border-radius: 10px;
 }
 .link {
   text-decoration: none;
   color: black;
+  font-size: 1.8rem;
 }
 .link:hover {
   color: blue;
+}
+.imgHome {
+  width: 200px;
+}
+.imgMovieList {
+  width: 300px;
+  transition: all 1s ease;
+}
+.imgMovieList:hover {
+  transform: scale(1.2);
+}
+.summary {
+  font-size: 1.2rem;
+  transition: all 1s ease;
+}
+
+.home_title_name {
+  height: 100px;
 }

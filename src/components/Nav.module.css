@@ -1,9 +1,11 @@
 .layout {
+  font-family: "Lato", sans-serif;
   box-sizing: border-box;
   width: 100%;
-  height: 20%;
+  height: 40px;
   display: flex;
   justify-content: space-between;
+  padding: 10px;
 }
 .nav {
   display: flex;
@@ -15,11 +17,28 @@
 }
 .homelink {
   text-decoration: none;
-  color: red;
-  font-size: 40px;
+  font-size: 3rem;
   font-weight: 600;
+}
+.homelink > span:nth-child(1) {
+  color: blueviolet;
+}
+.homelink > span:nth-child(2) {
+  color: aquamarine;
+}
+.homelink > span:nth-child(3) {
+  color: violet;
+}
+.homelink > span:nth-child(4) {
+  color: tomato;
 }
 
 .link {
+  font-size: 1.2rem;
+  color: rgb(29, 191, 212);
   text-decoration: none;
+}
+
+.link:hover {
+  color: rgb(9, 77, 137);
 }

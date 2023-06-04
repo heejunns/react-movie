@@ -17,9 +17,9 @@ const MovieList = () => {
   };
   useEffect(() => {
     getMoviesList();
-  }, []);
+  }, [MoviesList]);
   return (
-    <div>
+    <div className={styled.background}>
       <header>
         <Nav />
       </header>
@@ -32,7 +32,6 @@ const MovieList = () => {
                 id={movie.id}
                 titleLong={movie.title_long}
                 mediumCoverImage={movie.medium_cover_image}
-                rating={movie.rating}
                 summary={
                   movie.summary.length > 250
                     ? movie.summary.slice(0, 251) + "..."
