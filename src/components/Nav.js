@@ -30,13 +30,23 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <Link to={`/${"drama"}`} className={styled.link}>
-            Drama{" "}
+          <Link to={`/${"comedy"}`} className={styled.link}>
+            Comedy
           </Link>
         </li>
         <li>
-          <Link to={`/${"history"}`} className={styled.link}>
-            History
+          <Link to={`/${"drama"}`} className={styled.link}>
+            Drama
+          </Link>
+        </li>
+        <li>
+          <Link to={`/nowmovie`} className={styled.link}>
+            Now
+          </Link>
+        </li>
+        <li>
+          <Link to={`/upcoming`} className={styled.link}>
+            Upcoming
           </Link>
         </li>
       </ul>

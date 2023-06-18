@@ -1,64 +1,109 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import styled from "./Home.module.css";
 import Nav from "../components/Nav";
 import Slide from "../components/Slide";
-import { json } from "react-router-dom";
+import axios from "axios";
+const options = [
+  {
+    params: {
+      include_adult: "true",
+      include_video: "false",
+      language: "ko",
+      page: "1",
+      region: "kr",
+      sort_by: "popularity.desc",
+      with_genres: "28",
+    },
+    headers: {
+      accept: "application/json",
+      Authorization: process.env.REACT_APP_API_AUTH,
+    },
+  },
+  {
+    params: {
+      include_adult: "true",
+      include_video: "false",
+      language: "ko",
+      page: "1",
+      region: "kr",
+      sort_by: "popularity.desc",
+      with_genres: "12",
+    },
+    headers: {
+      accept: "application/json",
+      Authorization: process.env.REACT_APP_API_AUTH,
+    },
+  },
+  {
+    params: {
+      include_adult: "true",
+      include_video: "false",
+      language: "ko",
+      page: "1",
+      region: "kr",
+      sort_by: "popularity.desc",
+      with_genres: "16",
+    },
+    headers: {
+      accept: "application/json",
+      Authorization: process.env.REACT_APP_API_AUTH,
+    },
+  },
+  {
+    params: {
+      include_adult: "true",
+      include_video: "false",
+      language: "ko",
+      page: "1",
+      region: "kr",
+      sort_by: "popularity.desc",
+      with_genres: "35",
+    },
+    headers: {
+      accept: "application/json",
+      Authorization: process.env.REACT_APP_API_AUTH,
+    },
+  },
+  {
+    params: {
+      include_adult: "true",
+      include_video: "false",
+      language: "ko",
+      page: "1",
+      region: "kr",
+      sort_by: "popularity.desc",
+      with_genres: "18",
+    },
+    headers: {
+      accept: "application/json",
+      Authorization: process.env.REACT_APP_API_AUTH,
+    },
+  },
+];
 function Home() {
   const [loading, setLoading] = useState(true);
-  const [movies, setMovies] = useState([]);
+  const [comedyMovies, setComedyMovies] = useState([]);
   const [animationMovies, setAnimationMovies] = useState([]);
   const [actionMovies, setActionMovies] = useState([]);
   const [adventureMovies, setAdventureMovies] = useState([]);
-  const [romanceMovies, setRomanceMovies] = useState([]);
+  const [dramaMovies, setDramaMovies] = useState([]);
   const getMovies = async () => {
-    const response = await fetch(
-      `https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=download_count&limit=20&page=1`
+    const responses = await axios.all(
+      options.map((option) =>
+        axios.get("https://api.themoviedb.org/3/discover/movie", option)
+      )
     );
+    setActionMovies(responses[0].data.results);
+    setAdventureMovies(responses[1].data.results);
+    setAnimationMovies(responses[2].data.results);
+    setComedyMovies(responses[3].data.results);
+    setDramaMovies(responses[4].data.results);
 
-    const json = await response.json();
-    console.log(json);
-    setMovies(json.data.movies);
     setLoading(false);
-  };
-  const getMoviesAnimation = async () => {
-    const responseAnimation = await fetch(
-      "https://yts.mx/api/v2/list_movies.json?minimum_rating=8&sort_by=download_count&limit=20&genre=animation"
-    );
-    const responseAnimationJson = await responseAnimation.json();
-    console.log(responseAnimationJson);
-    setAnimationMovies(responseAnimationJson.data.movies);
-  };
-  const getMoviesAction = async () => {
-    const responseAction = await fetch(
-      "https://yts.mx/api/v2/list_movies.json?minimum_rating=8&sort_by=download_count&limit=20&genre=action"
-    );
-    const responseActionJson = await responseAction.json();
-
-    setActionMovies(responseActionJson.data.movies);
-  };
-  const getMoviesAdventure = async () => {
-    const responseAdventure = await fetch(
-      "https://yts.mx/api/v2/list_movies.json?minimum_rating=8&sort_by=download_count&limit=20&genre=adventure"
-    );
-    const responseAdventureJson = await responseAdventure.json();
-
-    setAdventureMovies(responseAdventureJson.data.movies);
-  };
-  const getMoviesRomance = async () => {
-    const responseRomance = await fetch(
-      "https://yts.mx/api/v2/list_movies.json?minimum_rating=8&sort_by=download_count&limit=20&genre=romance"
-    );
-    const responseRomanceJson = await responseRomance.json();
-
-    setRomanceMovies(responseRomanceJson.data.movies);
   };
 
   useEffect(() => {
     getMovies();
-    getMoviesAnimation();
-    getMoviesAction();
-    getMoviesAdventure();
-    getMoviesRomance();
   }, []);
 
   return (
@@ -80,11 +125,16 @@ function Home() {
             <Nav className={styled.nav} />
           </header>
           <main className={styled.main}>
-            <Slide movies={movies} />
+            <div className={styled.slideName}>Comedy TOP20</div>
+            <Slide movies={comedyMovies} />
+            <div className={styled.slideName}>Animation TOP20</div>
             <Slide movies={animationMovies} />
+            <div className={styled.slideName}>Action TOP20</div>
             <Slide movies={actionMovies} />
+            <div className={styled.slideName}>Adventure TOP20</div>
             <Slide movies={adventureMovies} />
-            <Slide movies={romanceMovies} />
+            <div className={styled.slideName}>Drama TOP20</div>
+            <Slide movies={dramaMovies} />
           </main>
         </>
       )}

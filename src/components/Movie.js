@@ -11,11 +11,11 @@ function Movie({ mediumCoverImage, titleLong, id, slideMode, summary }) {
             src={mediumCoverImage}
             alt={titleLong}
           />
-          <h2 className={styled.home_title_name}>
+          <div className={styled.home_title_name}>
             <Link to={`/movie/${id}`} className={styled.link}>
-              {titleLong}
+              {titleLong.length > 55 ? titleLong.slice(0, 50) : titleLong}
             </Link>
-          </h2>
+          </div>
         </div>
       ) : (
         <div className={styled.movieListBord}>
@@ -39,7 +39,7 @@ function Movie({ mediumCoverImage, titleLong, id, slideMode, summary }) {
 Movie.propTypes = {
   id: PropTypes.number.isRequired,
   mediumCoverImage: PropTypes.string.isRequired,
-  title_long: PropTypes.string.isRequired,
+  titleLong: PropTypes.string.isRequired,
   summary: PropTypes.string,
   slideMode: PropTypes.bool,
 };

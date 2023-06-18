@@ -3,9 +3,9 @@ import Movie from "./Movie";
 import styled from "./Slide.module.css";
 
 const Slide = ({ movies }) => {
-  const [currentLocation, setCurrentLocation] = useState(0);
-  const [currentClick, setCurrentClick] = useState(1);
-  const slideMode = useRef(true);
+  const [currentLocation, setCurrentLocation] = useState(0); // 최근 위치
+  const [currentClick, setCurrentClick] = useState(1); // 클릭위치에 따라서 현재 클릭한 버튼의 색을 주황색으로 변경하기 위한 state
+  const slideMode = useRef(true); // 홈 화면에서 슬라이드에 Movie 컴포넌트를 불러오는지 알기 위해서
   const onclickLeft = () => {
     setCurrentLocation((prev) => prev + 100);
   };
@@ -13,7 +13,7 @@ const Slide = ({ movies }) => {
     setCurrentLocation((prev) => prev - 100);
   };
 
-  const onclickSmartButtonWon = (e) => {
+  const onclickSmartButtonWon = () => {
     setCurrentClick(1);
     setCurrentLocation(0);
   };
@@ -48,21 +48,25 @@ const Slide = ({ movies }) => {
                 id={movieElement.id}
                 slideMode={slideMode.current}
                 key={index}
-                mediumCoverImage={movieElement.medium_cover_image}
-                titleLong={movieElement.title_long}
+                mediumCoverImage={`https://image.tmdb.org/t/p/w200${movieElement.poster_path}`}
+                titleLong={movieElement.title}
               />
             );
           })}
         </div>
-        <div></div>
       </div>
-      <button className={styled.left} onClick={onclickLeft}>
-        &lt;
-      </button>
 
-      <button className={styled.right} onClick={onclickRight}>
-        &gt;
-      </button>
+      {/* {currentLocation === 0 ? null : (
+        <button className={styled.left} onClick={onclickLeft}>
+          &lt;
+        </button>
+      )}
+      {currentLocation === -4000 ? null : (
+        <button className={styled.right} onClick={onclickRight}>
+          &gt;
+        </button>
+      )} */}
+
       <div className={styled.slide_smart_button}>
         <div
           onClick={onclickSmartButtonWon}

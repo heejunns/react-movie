@@ -1,4 +1,5 @@
 .back {
+  min-width: 100%;
   position: relative;
 }
 .container {
@@ -21,23 +22,25 @@
 .right {
   border-radius: 50%;
   background-color: skyblue;
+  border-style: none;
+  font-size: 2rem;
 }
 .left:hover,
 .right:hover {
   background-color: rgb(28, 103, 179);
 }
 .left {
-  position: absolute;
+  position: relative;
   top: 35%;
   left: 15%;
   padding: 10px;
+  z-index: 10;
 }
 .right {
-  position: absolute;
+  position: relative;
   right: 15%;
   top: 35%;
   padding: 10px;
-
   z-index: 10;
 }
 .slide_smart_button {

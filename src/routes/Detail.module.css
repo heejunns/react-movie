@@ -35,3 +35,90 @@
 .detail_runtime {
   font-size: 1.5rem;
 }
+
+.loading {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+.loading > div {
+  display: inline-block;
+}
+.loadingText {
+  font-size: 5rem;
+}
+.loadingIcon1 {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
+  animation-duration: 1s;
+  animation-delay: 0.1s;
+  animation-name: move;
+  animation-iteration-count: infinite;
+}
+
+.loadingIcon2 {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
+  animation-delay: 0.15s;
+  animation-duration: 1s;
+  animation-name: move;
+  animation-iteration-count: infinite;
+}
+.loadingIcon3 {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
+  animation-delay: 0.2s;
+  animation-duration: 1s;
+  animation-name: move;
+  animation-iteration-count: infinite;
+}
+.loadingIcon4 {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
+  animation-delay: 0.25s;
+  animation-duration: 1s;
+  animation-name: move;
+  animation-iteration-count: infinite;
+}
+.loadingIcon5 {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
+  animation-delay: 0.3s;
+  animation-duration: 1s;
+  animation-name: move;
+  animation-iteration-count: infinite;
+}
+.loadingIcon6 {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
+  animation-delay: 0.35s;
+  animation-duration: 1s;
+  animation-name: move;
+  animation-iteration-count: infinite;
+}
+@keyframes move {
+  from {
+    top: 0px;
+  }
+  to {
+    top: -20px;
+  }
+}
