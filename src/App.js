@@ -9,11 +9,20 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/:id" element={<MovieList />} />
-        <Route path="/nowmovie" element={<NowMovie />} />
-        <Route path="/upcoming" element={<Upcoming />} />
-        <Route path="/movie/:id" element={<Detail />} />
+        <Route path={process.env.PUBLIC_URL + "/"} element={<Home />} />
+        <Route path={process.env.PUBLIC_URL + "/:id"} element={<MovieList />} />
+        <Route
+          path={process.env.PUBLIC_URL + "/nowmovie"}
+          element={<NowMovie />}
+        />
+        <Route
+          path={process.env.PUBLIC_URL + "/upcoming"}
+          element={<Upcoming />}
+        />
+        <Route
+          path={process.env.PUBLIC_UR + `/movie/:id`}
+          element={<Detail />}
+        />
       </Routes>
     </Router>
   );

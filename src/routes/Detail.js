@@ -9,9 +9,8 @@ const Detail = () => {
   const [loading, setLoading] = useState(true);
   const [detailMovie, setDetailMovie] = useState([]);
   const { id } = useParams(); // 현재 페이지의 url 의 id 를 가져올 수 있음, id 가 담긴 객체 형태로 반환
+  console.log(id);
   const options = {
-    method: "GET",
-    url: "https://api.themoviedb.org/3/movie/798286",
     params: { language: "ko" },
     headers: {
       accept: "application/json",
@@ -25,7 +24,6 @@ const Detail = () => {
         `https://api.themoviedb.org/3/movie/${id}`,
         options
       );
-      console.log("데이터", getMovieDetail);
 
       setDetailMovie(getMovieDetail.data);
       setLoading(false);

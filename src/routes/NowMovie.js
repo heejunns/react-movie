@@ -3,7 +3,6 @@ import axios from "axios";
 import Nav from "../components/Nav";
 import Movie from "../components/Movie";
 import styled from "./NowMovie.module.css";
-import { useParams } from "react-router-dom";
 const options = {
   params: { language: "ko", page: "1", region: "kr" },
   headers: {

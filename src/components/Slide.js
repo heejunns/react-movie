@@ -6,12 +6,6 @@ const Slide = ({ movies }) => {
   const [currentLocation, setCurrentLocation] = useState(0); // 최근 위치
   const [currentClick, setCurrentClick] = useState(1); // 클릭위치에 따라서 현재 클릭한 버튼의 색을 주황색으로 변경하기 위한 state
   const slideMode = useRef(true); // 홈 화면에서 슬라이드에 Movie 컴포넌트를 불러오는지 알기 위해서
-  const onclickLeft = () => {
-    setCurrentLocation((prev) => prev + 100);
-  };
-  const onclickRight = () => {
-    setCurrentLocation((prev) => prev - 100);
-  };
 
   const onclickSmartButtonWon = () => {
     setCurrentClick(1);
@@ -55,18 +49,6 @@ const Slide = ({ movies }) => {
           })}
         </div>
       </div>
-
-      {/* {currentLocation === 0 ? null : (
-        <button className={styled.left} onClick={onclickLeft}>
-          &lt;
-        </button>
-      )}
-      {currentLocation === -4000 ? null : (
-        <button className={styled.right} onClick={onclickRight}>
-          &gt;
-        </button>
-      )} */}
-
       <div className={styled.slide_smart_button}>
         <div
           onClick={onclickSmartButtonWon}

@@ -80,7 +80,7 @@ const options = [
     },
   },
 ];
-function Home() {
+const Home = () => {
   const [loading, setLoading] = useState(true);
   const [comedyMovies, setComedyMovies] = useState([]);
   const [animationMovies, setAnimationMovies] = useState([]);
@@ -140,6 +140,6 @@ function Home() {
       )}
     </div>
   );
-}
+};
 
 export default Home;

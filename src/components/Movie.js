@@ -12,7 +12,10 @@ function Movie({ mediumCoverImage, titleLong, id, slideMode, summary }) {
             alt={titleLong}
           />
           <div className={styled.home_title_name}>
-            <Link to={`/movie/${id}`} className={styled.link}>
+            <Link
+              to={process.env.PUBLIC_URL + `/movie/${id}`}
+              className={styled.link}
+            >
               {titleLong.length > 55 ? titleLong.slice(0, 50) : titleLong}
             </Link>
           </div>
@@ -25,7 +28,10 @@ function Movie({ mediumCoverImage, titleLong, id, slideMode, summary }) {
             className={styled.imgMovieList}
           />
           <h2>
-            <Link to={`/movie/${id}`} className={styled.link}>
+            <Link
+              to={process.env.PUBLIC_URL + `/movie/${id}`}
+              className={styled.link}
+            >
               {titleLong}
             </Link>
           </h2>
